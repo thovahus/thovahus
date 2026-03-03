@@ -1,0 +1,23 @@
+name: Update contribution graph
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  graph:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      #pin version to random commit hash. Update or change at some point in the future
+      - name: Generate activity graph
+        uses: Ashutosh00710/github-readme-activity-graph@6402822 
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
