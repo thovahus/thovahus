@@ -1,68 +1,44 @@
-<p align="center">
-  <img src="https://github.com/yourusername/yourusername/raw/main/header-gradient.png" alt="Gradient Header" width="100%" />
-</p>
+# Thomas Vatnamo Hustad
 
-<h1 align="center">Thomas Vatnamo Hustad</h1>
-<p align="center">
-  Fullstack Developer | IT consultant
-</p>
+Fullstack Developer | IT Consultant
 
-<p align="center">
-  <a href="https://www.linkedin.com/in/thovahus/">
-    <img src="https://img.shields.io/badge/LinkedIn-Thomas--Vatnamo--Hustad-blue?style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>
-  <a href="https://yourportfolio.com/">
-    <img src="https://img.shields.io/badge/Portfolio-Visit-orange?style=for-the-badge&logo=appveyor&logoColor=white" />
-  </a>
-</p>
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Thomas--Vatnamo--Hustad-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/thomas-vatnamo-hustad-8a2b54381/)
 
 ---
 
 ## 🛠 Tech Stack
 
-<p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=white" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" /></a>
-</p>
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-003B57?style=for-the-badge&logo=mysql&logoColor=white)
 
 ---
 
-## 📊 GitHub Stats
+## GitHub Stats
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=yourusername&show_icons=true&count_private=true&theme=default_repocard&hide_title=true" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yourusername&layout=compact&theme=default_repocard&hide_title=true" />
-</p>
+![Stats](https://github-readme-stats.vercel.app/api?username=thovahus&show_icons=true&count_private=true&theme=default_repocard&hide_title=true)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=thovahus&layout=compact&theme=default_repocard&hide_title=true)
 
 ---
 
-## 📌 Featured Projects
+## Projects
 
-### [Project One](https://github.com/yourusername/project-one)  
-Impactful description emphasizing **results and uniqueness**.  
-**Tech:** Python, Flask, PostgreSQL
+### [Bachelor Degree](https://github.com/emilhals/bachelor)
+Database exploration and improvements for QuickFeed. Evaluated **Golang, SQLite, multiple ORMs, and SQL-first approaches** to optimize performance and maintainability.
 
-### [Project Two](https://github.com/yourusername/project-two)  
-Concise description highlighting innovation.  
-**Tech:** JavaScript, React, Node.js
-
-### [Project Three](https://github.com/yourusername/project-three)  
-Focus on challenge solved or outcome.  
-**Tech:** TypeScript, Next.js, Tailwind CSS
+### [Pipe Tracer](hidden, job repo)
+Digitalizing offshore manual labor workflows. Built with **Flutter, Dart, Python, PostgreSQL, and SQLAlchemy** to streamline data collection and reporting.
 
 ---
 
-## 💡 About Me
+## About Me
 
-- 🔭 Currently building **[Current Project Name]**  
-- 🌱 Continuously learning **React, Node.js, cloud architectures**  
-- 💬 Ask me about **web dev, open source, or automation**  
-- 📫 Reach me at: [your.email@example.com](mailto:your.email@example.com)
+- Learning **React, Node.js, and cloud architectures**  
+- Interested in building scalable, maintainable fullstack systems  
+- Contact: [LinkedIn](https://www.linkedin.com/in/thomas-vatnamo-hustad-8a2b54381/)
 
 ---
 
-> ⚡ Fun Fact: I write code that works and **makes people say “wow, that’s clean.”**
+> ⚡ I enjoy refactoring and optimizing systems until they’re elegant, clean, and simple.
