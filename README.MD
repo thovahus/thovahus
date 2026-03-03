@@ -20,8 +20,11 @@ Fullstack Developer | IT Consultant
 
 ## GitHub Stats
 
-![Stats](https://github-readme-stats.vercel.app/api?username=thovahus&show_icons=true&count_private=true&theme=default)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=thovahus&layout=compact&theme=default)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=thovahus&show_icons=true&theme=radical&count_private=true&bg_color=transparent&hide=prs,issues&token=YOUR_GITHUB_PAT)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=your_username&layout=compact&theme=radical&bg_color=transparent&token=YOUR_GITHUB_PAT)
+
+![GitHub Contributions](https://github-readme-activity-graph.vercel.app/graph?username=thovahus&theme=react-dark&bg_color=transparent&hide_border=true&include_private=true)
 
 ---
 
