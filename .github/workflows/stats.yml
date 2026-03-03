@@ -1,0 +1,33 @@
+name: Update GitHub Stats
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # daily at midnight
+  #workflow_dispatch:      # dont allow manual trigger
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Generate GitHub Stats
+        run: |
+          echo "Fetching GitHub stats..."
+          curl -s "https://github-readme-stats.vercel.app/api?username=thovahus&show_icons=true&theme=radical&count_private=true&bg_color=transparent&hide=prs,issues&token=${{ secrets.STATS_TOKEN }}" > stats.md
+          curl -s "https://github-readme-stats.vercel.app/api/top-langs/?username=thovahus&layout=compact&theme=radical&bg_color=transparent&token=${{ secrets.STATS_TOKEN }}" >> stats.md
+          echo "![GitHub Contributions](https://github-readme-activity-graph.vercel.app/graph?username=thovahus&theme=react-dark&bg_color=transparent&hide_border=true&include_private=true)" >> stats.md
+
+      - name: Update README with Stats
+        run: |
+          awk '/<!-- GITHUB-STATS-START -->/{print;system("cat stats.md");next} /<!-- GITHUB-STATS-END -->/{next}1' README.md > README_tmp.md
+          mv README_tmp.md README.md
+
+      - name: Commit & Push
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add README.md
+          git commit -m "Update GitHub stats" || echo "No changes"
+          git push
