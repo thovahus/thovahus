@@ -1,9 +1,9 @@
 # Thomas Vatnamo Hustad
 
 Fullstack Developer | IT Consultant
+> ⚡ I enjoy refactoring and optimizing systems until they’re elegant, clean, and simple.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Thomas--Vatnamo--Hustad-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/thomas-vatnamo-hustad-8a2b54381/)
-
+[![Add me on LinkedIn](https://img.shields.io/badge/LinkedIn-Thomas--Vatnamo--Hustad-blue?style=for-the-badge&logo=linkedin&logoColor=white)]
 ---
 
 ## 🛠 Tech Stack
@@ -13,13 +13,15 @@ Fullstack Developer | IT Consultant
 ![Python](https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-003B57?style=for-the-badge&logo=mysql&logoColor=white)
+![Golang](https://img.shields.io/badge/Golang-00ADD8?style=for-the-badge&logo=go&logoColor=white)
+![…](https://img.shields.io/badge/…-grey?style=for-the-badge&logoColor=white)
 
 ---
 
 ## GitHub Stats
 
-![Stats](https://github-readme-stats.vercel.app/api?username=thovahus&show_icons=true&count_private=true&theme=default_repocard&hide_title=true)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=thovahus&layout=compact&theme=default_repocard&hide_title=true)
+![Stats](https://github-readme-stats.vercel.app/api?username=thovahus&show_icons=true&count_private=true&theme=default)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=thovahus&layout=compact&theme=default)
 
 ---
 
@@ -28,17 +30,7 @@ Fullstack Developer | IT Consultant
 ### [Bachelor Degree](https://github.com/emilhals/bachelor)
 Database exploration and improvements for QuickFeed. Evaluated **Golang, SQLite, multiple ORMs, and SQL-first approaches** to optimize performance and maintainability.
 
-### [Pipe Tracer](hidden, job repo)
-Digitalizing offshore manual labor workflows. Built with **Flutter, Dart, Python, PostgreSQL, and SQLAlchemy** to streamline data collection and reporting.
-
+### Pipe Tracer (Private / Job Repo)
+Digitalized offshore manual labor workflows. Built with **Flutter and FastAPI** to streamline data collection, reporting, and improve workflow efficiency.  
+> Repo is private due to client confidentiality.
 ---
-
-## About Me
-
-- Learning **React, Node.js, and cloud architectures**  
-- Interested in building scalable, maintainable fullstack systems  
-- Contact: [LinkedIn](https://www.linkedin.com/in/thomas-vatnamo-hustad-8a2b54381/)
-
----
-
-> ⚡ I enjoy refactoring and optimizing systems until they’re elegant, clean, and simple.
