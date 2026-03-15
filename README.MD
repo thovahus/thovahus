@@ -23,11 +23,8 @@ Full-Stack Developer | IT Consultant
 ## GitHub Activity
 
 <picture>
-  <!-- Dark theme for dark mode -->
   <source media="(prefers-color-scheme: dark)" srcset="./graph-dark.svg">
-  <!-- Light theme for light mode -->
   <source media="(prefers-color-scheme: light)" srcset="./graph-light.svg">
-  <!-- Fallback -->
   <img height="165" src="./graph-dark.svg" alt="GitHub activity graph">
 </picture>
 
