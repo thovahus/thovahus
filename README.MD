@@ -20,14 +20,21 @@ Full-Stack Developer | IT Consultant
 
 ---
 
-## GitHub Stats
+## GitHub Stats & Activity
 
-<p>
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=thovahus&show_icons=true&theme=radical&hide_border=true"/>
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=thovahus&layout=compact&theme=radical&hide_border=true"/>
-</p>
-
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=thovahus&theme=react-dark)
+<table>
+  <tr>
+    <td>
+      <img height="165" src="https://github-readme-stats.vercel.app/api?username=thovahus&show_icons=true&theme=radical&hide_border=true"/>
+    </td>
+    <td>
+      <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=thovahus&layout=compact&theme=radical&hide_border=true"/>
+    </td>
+    <td>
+      <img height="165" src="./graph.svg"/>
+    </td>
+  </tr>
+</table>
 
 ---
 

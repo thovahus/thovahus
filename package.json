@@ -1,0 +1,8 @@
+{
+  "name": "github-activity-graph",
+  "version": "1.0.0",
+  "dependencies": {
+    "axios": "^1.7.0",
+    "canvas": "^2.11.2"
+  }
+}
