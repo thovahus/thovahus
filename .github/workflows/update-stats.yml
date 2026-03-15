@@ -12,7 +12,7 @@ jobs:
   activity-graph:
     runs-on: ubuntu-latest
     env:
-      PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+      STATS_TOKEN: ${{ secrets.STATS_TOKEN }}
       GITHUB_USERNAME: thovahus
 
     steps:
@@ -25,7 +25,7 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm ci || npm install
+        run: npm ci
 
       - name: Generate dark graph
         run: |

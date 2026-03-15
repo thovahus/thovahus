@@ -3,11 +3,11 @@ import fs from 'fs';
 import fetch from 'node-fetch';
 import { themes } from './themes.js';
 
-const GITHUB_TOKEN = process.env.PAT_TOKEN;
+const GITHUB_TOKEN = process.env.STATS_TOKEN;
 const USERNAME = process.env.GITHUB_USERNAME;
 const GRAPH_THEME = process.env.GRAPH_THEME || 'react-dark';
 
-if (!GITHUB_TOKEN) throw new Error('PAT_TOKEN is required for private repo access');
+if (!GITHUB_TOKEN) throw new Error('STATS_TOKEN is required for private repo access');
 if (!USERNAME) throw new Error('Set GITHUB_USERNAME environment variable');
 
 const THEME = themes[GRAPH_THEME];
@@ -18,7 +18,7 @@ async function fetchRepos() {
   let page = 1;
   while (true) {
     const res = await fetch(
-      `https://api.github.com/user/repos?per_page=100&page=${page}&visibility=all&affiliation=owner`,
+      `https://api.github.com/user/repos?per_page=100&page=${page}&visibility=all&affiliation=owner,collaborator,organization_member`,
       { headers: { Authorization: `token ${GITHUB_TOKEN}` } }
     );
     if (!res.ok) throw new Error(`GitHub API error: ${res.status} ${res.statusText}`);
@@ -31,13 +31,21 @@ async function fetchRepos() {
 }
 
 async function fetchContributions(repo) {
-  const res = await fetch(
-    `https://api.github.com/repos/${USERNAME}/${repo.name}/commits?author=${USERNAME}&per_page=100`,
-    { headers: { Authorization: `token ${GITHUB_TOKEN}` } }
-  );
-  if (!res.ok) return [];
-  const commits = await res.json();
-  return commits.map(c => new Date(c.commit.author.date));
+  const dates = [];
+  let page = 1;
+  while (true) {
+    const res = await fetch(
+      `https://api.github.com/repos/${repo.owner.login}/${repo.name}/commits?author=${USERNAME}&per_page=100&page=${page}`,
+      { headers: { Authorization: `token ${GITHUB_TOKEN}` } }
+    );
+    if (!res.ok) break;
+    const commits = await res.json();
+    if (!Array.isArray(commits) || commits.length === 0) break;
+    dates.push(...commits.map(c => new Date(c.commit.author.date)));
+    if (commits.length < 100) break;
+    page++;
+  }
+  return dates;
 }
 
 function generateSVG(contributions) {
@@ -53,7 +61,7 @@ function generateSVG(contributions) {
   const width = 53 * (boxSize + padding);
   const height = 7 * (boxSize + padding);
 
-  let svg = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" style="background:${THEME.background}">`;
+  let svg = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" style="background:transparent">`;  
 
   const start = new Date();
   start.setFullYear(start.getFullYear() - 1);
@@ -65,7 +73,7 @@ function generateSVG(contributions) {
       const key = current.toISOString().split('T')[0];
       const count = days[key] || 0;
       const color = count === 0 ? colorLevels[0] : colorLevels[Math.min(count, colorLevels.length - 1)];
-      svg += `<rect x="${week * (boxSize + padding)}" y="${day * (boxSize + padding)}" width="${boxSize}" height="${boxSize}" fill="${color}" />`;
+      svg += `<rect x="${week * (boxSize + padding)}" y="${day * (boxSize + padding)}" width="${boxSize}" height="${boxSize}" rx="2" fill="${color}" />`;      
     }
   }
   svg += '</svg>';
