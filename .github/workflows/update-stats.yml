@@ -18,6 +18,6 @@ jobs:
 
       #pin version to random commit hash. Update or change at some point in the future
       - name: Generate activity graph
-        uses: Ashutosh00710/github-readme-activity-graph@6402822 
+        uses: Ashutosh00710/github-readme-activity-graph@f3552330dc51e062dd0cb1a8e37d29c50d523e03
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
