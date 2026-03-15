@@ -1,38 +1,35 @@
-import fs from 'fs';
-import axios from 'axios';
-import { createCanvas } from 'canvas';
-import { themes } from './themes.js';
+// generate-activity-graph.js
+import fs from "fs";
+import axios from "axios";
+import { themes } from "./themes.js";
 
 const token = process.env.GITHUB_TOKEN;
 if (!token) throw new Error("GITHUB_TOKEN not set!");
 
 const username = "thovahus";
-const themeName = "react-dark"; // pick your theme
+const themeName = process.env.GRAPH_THEME || "react-dark"; // dynamic theme
 const theme = themes[themeName];
 
-const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
                 "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-// fetch last year events
+// fetch last year of user events
 async function fetchEvents() {
-  const events = [];
   let page = 1;
+  const events = [];
   while (true) {
     const res = await axios.get(`https://api.github.com/users/${username}/events`, {
-      headers: {
-        Authorization: `token ${token}`,
-        Accept: 'application/vnd.github+json'
-      },
+      headers: { Authorization: `token ${token}` },
       params: { per_page: 100, page }
     });
-    if (res.data.length === 0) break;
+    if (!res.data.length) break;
     events.push(...res.data);
     page++;
   }
   return events;
 }
 
-// convert events to 7x52 matrix
+// generate 7x52 matrix
 function generateMatrix(events) {
   const matrix = Array.from({ length: 52 }, () => Array(7).fill(0));
   const now = new Date();
@@ -45,7 +42,7 @@ function generateMatrix(events) {
   return matrix;
 }
 
-// map count to theme color
+// map count to color
 function getColor(count) {
   if (count === 0) return theme.colorLevels[0];
   if (count === 1) return theme.colorLevels[1];
@@ -54,47 +51,43 @@ function getColor(count) {
   return theme.colorLevels[4];
 }
 
-// draw SVG locally with month labels
-function drawGraph(matrix) {
+// draw SVG
+function drawSVG(matrix) {
   const cell = 12;
   const gap = 2;
   const width = 52 * (cell + gap);
-  const height = 7 * (cell + gap) + 20; // extra space for month labels
+  const height = 7 * (cell + gap) + 20; // top margin for month labels
 
-  const canvas = createCanvas(width, height);
-  const ctx = canvas.getContext('2d');
-
-  // background
-  ctx.fillStyle = theme.background;
-  ctx.fillRect(0, 0, width, height);
+  let svg = `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">`;
+  svg += `<rect width="100%" height="100%" fill="${theme.background}"/>`;
 
   // month labels
-  ctx.fillStyle = "#888"; // subtle gray
-  ctx.font = "12px sans-serif";
   const now = new Date();
   for (let m = 0; m < 12; m++) {
     const monthDate = new Date(now.getFullYear(), now.getMonth() - (11 - m), 1);
     const week = Math.floor((now - monthDate) / (7*24*60*60*1000));
     const x = 51 - week;
     if (x >= 0 && x < 52) {
-      ctx.fillText(MONTHS[monthDate.getMonth()], x*(cell+gap), 12);
+      svg += `<text x="${x*(cell+gap)}" y="12" font-size="12" fill="#888">${MONTHS[monthDate.getMonth()]}</text>`;
     }
   }
 
   // squares
   for (let w = 0; w < 52; w++) {
     for (let d = 0; d < 7; d++) {
-      ctx.fillStyle = getColor(matrix[w][d]);
-      ctx.fillRect(w*(cell+gap), d*(cell+gap) + 20, cell, cell); // offset for month labels
+      const x = w * (cell + gap);
+      const y = d * (cell + gap) + 20;
+      svg += `<rect x="${x}" y="${y}" width="${cell}" height="${cell}" fill="${getColor(matrix[w][d])}"/>`;
     }
   }
 
-  fs.writeFileSync('graph.svg', canvas.toBuffer('image/svg+xml'));
+  svg += `</svg>`;
+  fs.writeFileSync("graph.svg", svg);
 }
 
 (async () => {
   const events = await fetchEvents();
   const matrix = generateMatrix(events);
-  drawGraph(matrix);
-  console.log("graph.svg generated with month labels");
+  drawSVG(matrix);
+  console.log("graph.svg generated without native modules");
 })();

@@ -1,38 +1,51 @@
-name: Update contribution graph
+# .github/workflows/update-graph.yml
+name: Update Contribution Graph
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # daily at midnight UTC
+    - cron: "0 0 * * *" # daily at midnight UTC
   workflow_dispatch:
 
 permissions:
   contents: write
+  actions: read
 
 jobs:
-  generate-graph:
+  graph:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      - name: Generate activity graph
+      - name: Generate dark graph
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node scripts/generate-activity-graph.js
-
-      - name: Commit & push changes
+          GRAPH_THEME: react-dark
         run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add graph.svg
-          git commit -m "Update private activity graph" || echo "No changes"
+          node generate-activity-graph.js
+          mv graph.svg graph-dark.svg
+
+      - name: Generate light graph
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GRAPH_THEME: react-light
+        run: |
+          node generate-activity-graph.js
+          mv graph.svg graph-light.svg
+
+      - name: Commit updated graphs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add graph-dark.svg graph-light.svg
+          git commit -m "Update activity graphs" || echo "No changes to commit"
           git push

@@ -20,21 +20,16 @@ Full-Stack Developer | IT Consultant
 
 ---
 
-## GitHub Stats & Activity
+## GitHub Activity
 
-<table>
-  <tr>
-    <td>
-      <img height="165" src="https://github-readme-stats.vercel.app/api?username=thovahus&show_icons=true&theme=radical&hide_border=true"/>
-    </td>
-    <td>
-      <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=thovahus&layout=compact&theme=radical&hide_border=true"/>
-    </td>
-    <td>
-      <img height="165" src="./graph.svg"/>
-    </td>
-  </tr>
-</table>
+<picture>
+  <!-- Dark theme for dark mode -->
+  <source media="(prefers-color-scheme: dark)" srcset="./graph-dark.svg">
+  <!-- Light theme for light mode -->
+  <source media="(prefers-color-scheme: light)" srcset="./graph-light.svg">
+  <!-- Fallback -->
+  <img height="165" src="./graph-dark.svg" alt="GitHub activity graph">
+</picture>
 
 ---
 
