@@ -1,11 +1,13 @@
 // themes.js
 export const themes = {
   'react-dark': {
-    background: '#0d1117',
-    colorLevels: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353']
+    labelColor: '#8b949e',
+    glowColor: '#ff9500',
+    colorLevels: ['#0d0a0a', '#3d1200', '#7c2d00', '#c85400', '#ff9500']
   },
   'react-light': {
-    background: '#ffffff',
-    colorLevels: ['#ebedf0', '#c6e48b', '#7bc96f', '#239a3b', '#196127']
+    labelColor: '#57606a',
+    glowColor: '#0284c7',
+    colorLevels: ['#f0f9ff', '#bae6fd', '#38bdf8', '#0284c7', '#0c4a6e']
   }
 };
