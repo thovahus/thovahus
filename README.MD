@@ -1,46 +1,39 @@
+﻿<div align="center">
+
 # Thomas Vatnamo Hustad
 
-Full-Stack Developer | IT Consultant
+Full-Stack Software Engineer
 
-*⚡ I enjoy refactoring and optimizing systems until they’re elegant, clean, and simple.*
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/thomas-vatnamo-hustad-8a2b54381/)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Thomas--Vatnamo--Hustad-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/thomas-vatnamo-hustad-8a2b54381/)
-
----
-
-## Tech Stack
-
-![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-003B57?style=for-the-badge&logo=mysql&logoColor=white)
-![Golang](https://img.shields.io/badge/Golang-00ADD8?style=for-the-badge&logo=go&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+</div>
 
 ---
 
-## GitHub Activity
+I build things that solve real problems and make people's work easier. What drives me most is digging into logic and performance, finding bottlenecks and eliminating them in ways that are actually noticeable.
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./graph-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./graph-light.svg">
-  <img height="165" src="./graph-dark.svg" alt="GitHub activity graph">
-</picture>
+---
+
+## Stack
+
+<div align="center">
+
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=dart&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3670A0?style=flat-square&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-003B57?style=flat-square&logo=mysql&logoColor=white)
+
+</div>
 
 ---
 
 ## Projects
 
-### Bachelor Degree
-Database exploration and improvements for **QuickFeed**.
+**Bachelor's Degree** — database performance study on [QuickFeed](https://github.com/quickfeed/quickfeed)  
+Full database revisit on a real-world academic platform. Redesigned schema, benchmarked ORMs and SQL-first approaches, and analyzed performance across a range of real query patterns — including N+1 issues, warm vs. cold cache behavior, and query plan efficiency. Reproducible benchmarking harness available [here](https://github.com/emilhals/datbac-quickfeed-db-revisited).
 
-Focus:
-- Evaluated **Golang vs SQLite architectures**
-- Tested multiple **ORM approaches**
-- Investigated **SQL-first design for performance**
-
-### Pipe Tracer
-Digitalized offshore manual labor workflows using **Flutter + FastAPI**.
-
-> Repository private due to confidentiality.
+**Pipe Tracer** — offshore logistics  
+Full-stack system built from scratch in a team. Comprises a Flutter mobile app, a FastAPI backend running on a hosted server, and a PostgreSQL database on Azure. Replaces error-prone, paper-based logistics workflows on offshore installations with a fully tracked, digital process. *(Private repo)*
