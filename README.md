@@ -8,11 +8,7 @@
 
 <br>
 
-<!--
-  ASCII portrait: generated from a photo with scripts/generate_ascii_portrait.py
-  (Pillow-based, no external service/token). Re-run the script with a new
-  photo any time to refresh it: python3 scripts/generate_ascii_portrait.py <photo>
--->
+<!-- regenerate: python3 scripts/generate_ascii_portrait.py <photo> -->
 <table>
 <tr>
 <td valign="top" width="46%" align="center">
@@ -55,7 +51,7 @@ I build things that solve real problems and make people's work easier. What driv
 
 ### <code>thomas@github ~ $ ./contributions.sh</code>
 
-<!-- Snake animation: regenerated daily by .github/workflows/snake.yml (Platane/snk) -->
+<!-- regenerated daily by .github/workflows/snake.yml -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/thovahus/thovahus/output/snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/thovahus/thovahus/output/snake-light.svg" />
