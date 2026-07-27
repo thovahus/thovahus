@@ -8,14 +8,14 @@
 
 <br>
 
-<!-- regenerate: python3 scripts/generate_ascii_portrait.py <photo> -->
+<!-- regenerate: python3 scripts/generate_pixel_portrait.py <photo> -->
 <table>
 <tr>
 <td valign="top" width="46%" align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/ascii-portrait-dark.svg">
-  <img src="assets/ascii-portrait-light.svg" width="420" alt="Thomas — ASCII portrait" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/pixel-portrait-dark.svg">
+  <img src="assets/pixel-portrait-light.svg" width="380" alt="Thomas — pixel-art portrait" />
 </picture>
 
 </td>
