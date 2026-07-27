@@ -8,14 +8,14 @@
 
 <br>
 
-<!-- regenerate: python3 scripts/generate_pixel_portrait.py <photo> -->
+<!-- regenerate: python3 scripts/generate_pixel_portrait.py assets/cat.jpg --columns 60 --colors 28 -->
 <table>
 <tr>
 <td valign="top" width="46%" align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/pixel-portrait-dark.svg">
-  <img src="assets/pixel-portrait-light.svg" width="380" alt="Thomas — pixel-art portrait" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/pixel-cat-dark.svg">
+  <img src="assets/pixel-cat-light.svg" width="380" alt="My cat — pixel-art portrait" />
 </picture>
 
 </td>
@@ -39,6 +39,8 @@ Benchmarking, Optimizing, and Scaling.
 <img src="https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" />
 <img src="https://img.shields.io/badge/SQL-003B57?style=flat-square&logo=mysql&logoColor=white" alt="SQL" />
 </p>
+
+← my beloved cat
 
 </td>
 </tr>
@@ -67,7 +69,7 @@ Benchmarking, Optimizing, and Scaling.
 Built and scaled the fullstack for an automatic tracking system for shipping and operating pipes offshore. 
 Consists of a Flutter mobile app, a FastAPI backend hosted in azure cloud, and a PostgreSQL database also on Azure cloud.
 
-**[Bachelor's Degree, Computer Science](not-yet-public)**
+**[Bachelor's Degree, Computer Science](not-yet-public)** 
 A database performance study on [QuickFeed](https://github.com/quickfeed/quickfeed), an academic platform used for automatic grading.
 The [benchmarking harness](https://github.com/emilhals/datbac-quickfeed-db-revisited) created for the thesis is mainly written in GO.
 ---
