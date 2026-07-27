@@ -65,13 +65,16 @@ Benchmarking, Optimizing, and Scaling.
 
 ## Bigger Projects
 
+
 **[Pipe Tracer](https://play.google.com/store/apps/details?id=com.oceanimr.pipes&hl=en_US)** application for offshore logistics, built for **[OceanIMR](https://www.oceanimr.com/)**.
 Built and scaled the fullstack for an automatic tracking system for shipping and operating pipes offshore. 
 Consists of a Flutter mobile app, a FastAPI backend hosted in azure cloud, and a PostgreSQL database also on Azure cloud.
 
+
 **[Bachelor's Degree, Computer Science](not-yet-public)** 
 A database performance study on [QuickFeed](https://github.com/quickfeed/quickfeed), an academic platform used for automatic grading.
 The [benchmarking harness](https://github.com/emilhals/datbac-quickfeed-db-revisited) created for the thesis is mainly written in GO.
+
 ---
 
 <div align="center">
