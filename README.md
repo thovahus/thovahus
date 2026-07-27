@@ -23,7 +23,7 @@
 
 ### <code>thomas@github ~ $ whoami</code>
 
-I build things that solve real problems and make people's work easier. What drives me most is digging into logic and performance — finding bottlenecks and eliminating them in ways that are actually noticeable.
+Benchmarking, Optimizing, and Scaling. 
 
 <p>
 <a href="https://www.linkedin.com/in/thomas-vatnamo-hustad-8a2b54381/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
@@ -33,7 +33,6 @@ I build things that solve real problems and make people's work easier. What driv
 
 <p>
 <img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" alt="Flutter" />
-<img src="https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=dart&logoColor=white" alt="Dart" />
 <img src="https://img.shields.io/badge/Python-3670A0?style=flat-square&logo=python&logoColor=white" alt="Python" />
 <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" />
 <img src="https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white" alt="Go" />
@@ -62,14 +61,15 @@ I build things that solve real problems and make people's work easier. What driv
 
 ---
 
-## Projects
+## Bigger Projects
 
-**Bachelor's Degree** — database performance study on [QuickFeed](https://github.com/quickfeed/quickfeed)  
-Full database revisit on a real-world academic platform. Redesigned schema, benchmarked ORMs and SQL-first approaches, and analyzed performance across a range of real query patterns — including N+1 issues, warm vs. cold cache behavior, and query plan efficiency. Reproducible benchmarking harness available [here](https://github.com/emilhals/datbac-quickfeed-db-revisited).
+**Pipe Tracer**(https://play.google.com/store/apps/details?id=com.oceanimr.pipes&hl=en_US) application for offshore logistics, built for **OceanIMR**(https://www.oceanimr.com/).
+*(private repo)*
+Automatic tracking system for shipping and operating pipes offshore Consists of a Flutter mobile app, a FastAPI backend hosted in azure cloud, and a PostgreSQL database also on Azure cloud.
 
-**Pipe Tracer** — offshore logistics  
-Full-stack system built from scratch in a team. Comprises a Flutter mobile app, a FastAPI backend running on a hosted server, and a PostgreSQL database on Azure. Replaces error-prone, paper-based logistics workflows on offshore installations with a fully tracked, digital process. *(Private repo)*
-
+**Bachelor's Degree, Computer Science**(not-yet-public) 
+A database performance study on [QuickFeed](https://github.com/quickfeed/quickfeed), an academic platform used for automatic grading.
+The [benchmarking harness](https://github.com/emilhals/datbac-quickfeed-db-revisited) created for the thesis is mainly written in GO.
 ---
 
 <div align="center">
