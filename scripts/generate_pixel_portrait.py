@@ -1,18 +1,20 @@
 #!/usr/bin/env python3
 """Render a photo as a retro pixel-art SVG (dark + light variants).
 
-Usage: python3 scripts/generate_pixel_portrait.py <photo> [output-dir]
+Crop/frame the photo the way you want it beforehand -- this just downsamples
+and quantizes whatever image it's given.
+
+Usage: python3 scripts/generate_pixel_portrait.py <photo> [--columns N] [--colors N] [--out-dir DIR]
 """
-import sys
+import argparse
 from pathlib import Path
 
-from PIL import Image
+from PIL import Image, ImageEnhance
 
-COLUMNS = 48
-PALETTE_SIZE = 24
+DEFAULT_COLUMNS = 48
+DEFAULT_PALETTE_SIZE = 24
 CELL = 9
 GAP = 0
-CROP_BOX = (0.12, 0.05, 0.88, 0.95)  # left, top, right, bottom as fractions
 
 THEMES = {
     "dark": {"bg": "#0d1117", "frame": "#30363d"},
@@ -20,16 +22,15 @@ THEMES = {
 }
 
 
-def photo_to_pixel_grid(photo_path, columns=COLUMNS, colors=PALETTE_SIZE):
+def photo_to_pixel_grid(photo_path, columns, colors):
     image = Image.open(photo_path).convert("RGB")
-    width, height = image.size
-    left, top, right, bottom = CROP_BOX
-    image = image.crop((left * width, top * height, right * width, bottom * height))
+    image = ImageEnhance.Contrast(image).enhance(1.2)
+    image = ImageEnhance.Color(image).enhance(1.3)
 
     rows = max(1, round(columns * image.height / image.width))
     small = image.resize((columns, rows), Image.LANCZOS)
     small = small.quantize(colors, method=Image.MEDIANCUT).convert("RGB")
-    return list(small.getdata()), columns, rows
+    return list(small.getdata()), rows
 
 
 def render_svg(pixels, columns, rows, theme_name):
@@ -64,18 +65,19 @@ def render_svg(pixels, columns, rows, theme_name):
 
 
 def main():
-    if len(sys.argv) < 2:
-        print(__doc__)
-        sys.exit(1)
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("photo", type=Path)
+    parser.add_argument("--columns", type=int, default=DEFAULT_COLUMNS)
+    parser.add_argument("--colors", type=int, default=DEFAULT_PALETTE_SIZE)
+    parser.add_argument("--out-dir", type=Path, default=Path("assets"))
+    args = parser.parse_args()
 
-    pixels, columns, rows = photo_to_pixel_grid(sys.argv[1])
-
-    out_dir = Path(sys.argv[2]) if len(sys.argv) > 2 else Path("assets")
-    out_dir.mkdir(parents=True, exist_ok=True)
+    pixels, rows = photo_to_pixel_grid(args.photo, args.columns, args.colors)
+    args.out_dir.mkdir(parents=True, exist_ok=True)
 
     for theme_name in THEMES:
-        out_path = out_dir / f"pixel-portrait-{theme_name}.svg"
-        out_path.write_text(render_svg(pixels, columns, rows, theme_name))
+        out_path = args.out_dir / f"pixel-{args.photo.stem}-{theme_name}.svg"
+        out_path.write_text(render_svg(pixels, args.columns, rows, theme_name))
         print(f"Wrote {out_path}")
 
 
