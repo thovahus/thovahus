@@ -71,7 +71,7 @@ Built and scaled the fullstack for an automatic tracking system for shipping and
 Consists of a Flutter mobile app, a FastAPI backend hosted in azure cloud, and a PostgreSQL database also on Azure cloud.
 
 
-**[Bachelor's Degree, Computer Science](not-yet-public)** 
+**[Bachelor's Degree, Computer Science](https://nva.sikt.no/registration/019fdbfdc57d-d186ab84-3c50-4788-b7f0-258cf5d9b3d0)** 
 A database performance study on [QuickFeed](https://github.com/quickfeed/quickfeed), an academic platform used for automatic grading.
 The [benchmarking harness](https://github.com/emilhals/datbac-quickfeed-db-revisited) created for the thesis is mainly written in GO.
 
